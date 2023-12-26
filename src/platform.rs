@@ -1,7 +1,7 @@
 use std::time::Instant;
 
 use imgui::{Context, Io, MouseButton};
-use sfml::window::{Event, mouse::{Wheel, Button}, Key};
+use sfml::{window::{Event, mouse::{Wheel, Button}, Key}, graphics::RenderTarget};
 
 fn handle_key(io: &mut Io, key: Key, pressed: bool) {
     let igkey = match key {
@@ -124,13 +124,18 @@ pub struct SFMLPlatform {
 }
 
 impl SFMLPlatform {
-    pub fn init(imgui: &mut Context) -> Self {
+    pub fn init(imgui: &mut Context, tgt: &dyn RenderTarget) -> Self {
         // TODO: set flags
 
         imgui.set_platform_name(Some(format!(
             "imgui-sfml-support {}",
             env!("CARGO_PKG_VERSION")
         )));
+
+        // TODO: add support for retina displays
+        imgui.io_mut().display_framebuffer_scale = [1 as f32, 1 as f32];
+        let disp_sz = tgt.size();
+        imgui.io_mut().display_size = [disp_sz.x as f32, disp_sz.y as f32];
 
         Self {
             last_frame : Instant::now(),
