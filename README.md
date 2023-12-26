@@ -51,8 +51,8 @@ I have submitted a pull request in order to fix the issue.
 This is needed because the port doesn't provide `sf::Context::getFunction()` which is required by the renderer used.
 
 ## Credits
-(imgui-opengl-renderer)[https://github.com/michaelfairley/rust-imgui-opengl-renderer]: For providing the renderer
-(imgui-sfml)[https://github.com/SFML/imgui-sfml]: A C++ library which does the same thing
+[imgui-opengl-renderer](https://github.com/michaelfairley/rust-imgui-opengl-renderer): For providing the renderer
+[imgui-sfml](https://github.com/SFML/imgui-sfml): A C++ library which does the same thing
 
 ## Licensing
 Code is MIT licensed
