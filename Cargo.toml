@@ -8,6 +8,5 @@ edition = "2021"
 [dependencies]
 imgui = "0.11.0"
 imgui-opengl-renderer = "0.12.1"
-# sfml = "0.21.0"
-sfml = { git = "https://github.com/truenotzero/rust-sfml.git", branch = "context_get_function" }
+sfml = "0.21.0"
 

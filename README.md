@@ -42,16 +42,20 @@ fn main() {
 ```
 
 ## Installation instructions
-As of writing this, please note that the official Rust port of SFML can't be used.
+### IMPORTANT NOTE: This crate won't work out of the box!  
+As of writing this, please note that the official Rust port of SFML can't be used.  
 To fix this, change in your `Cargo.toml` under `[dependencies]`:
 ```toml
+# change this line
+sfml = "0.21.0"
+# to this line
 sfml = { git = "https://github.com/truenotzero/rust-sfml.git", branch = "context_get_function" }
 ```
-I have submitted a pull request in order to fix the issue.
+I have submitted a pull request in order to fix the issue.  
 This is needed because the port doesn't provide `sf::Context::getFunction()` which is required by the renderer used.
 
 ## Credits
-[imgui-opengl-renderer](https://github.com/michaelfairley/rust-imgui-opengl-renderer): For providing the renderer
+[imgui-opengl-renderer](https://github.com/michaelfairley/rust-imgui-opengl-renderer): For providing the renderer  
 [imgui-sfml](https://github.com/SFML/imgui-sfml): A C++ library which does the same thing
 
 ## Licensing
