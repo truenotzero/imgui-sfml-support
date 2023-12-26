@@ -140,6 +140,9 @@ impl SFMLPlatform {
     pub fn handle_event(&self, imgui: &mut Context, event: Event) {
         let mut io = imgui.io_mut();
         match event {
+            Event::Resized { width, height } => {
+                io.display_size = [width as f32, height as f32];
+            }
             Event::MouseMoved { x, y } => {
                 io.mouse_pos = [ x as f32, y as f32 ];
             },
@@ -189,7 +192,6 @@ impl SFMLPlatform {
         self.last_frame = now;
 
         // TODO: resize display & framebuffer scale
-        // io.display_size
         // io.display_framebuffer_scale
 
         // TODO:
