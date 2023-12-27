@@ -43,16 +43,17 @@ fn main() {
 
 ## Installation instructions
 ### IMPORTANT NOTE: This crate won't work out of the box!  
-As of writing this, please note that the official Rust port of SFML can't be used.  
+Due to how crates.io handles versioning, you should use the workaround specified below to get this working.  
 To fix this, change in your `Cargo.toml` under `[dependencies]`:
 ```toml
 # change this line
-sfml = "0.21.0"
+imgui-sfml-support = "0.1.1"
 # to this line
-sfml = { git = "https://github.com/truenotzero/rust-sfml.git", branch = "context_get_function" }
+imgui-sfml-support = { git = "https://github.com/truenotzero/imgui-sfml-support.git", branch="workaround" }
 ```
-I have submitted a pull request in order to fix the issue.  
-This is needed because the port doesn't provide `sf::Context::getFunction()` which is required by the renderer used.
+I have submitted a pull request in order to fix the issue, which has been accepted!  
+However, due to how dependencies and versioning are handled by cargo, until `rust-sfml` doesn't update to `0.22.0`, the workaround is needed.  
+This is because `rust-sfml` version `0.21.0` doesn't provide `sf::Context::getFunction()` which is required by the renderer used.
 
 ## Credits
 [imgui-opengl-renderer](https://github.com/michaelfairley/rust-imgui-opengl-renderer): For providing the renderer  
