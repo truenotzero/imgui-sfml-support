@@ -47,7 +47,7 @@ Due to how crates.io handles versioning, you should use the workaround specified
 To fix this, change in your crate's `Cargo.toml` under `[dependencies]`:
 ```toml
 # change these lines
-sfml = "0.20.0"
+sfml = "0.21.0"
 imgui-sfml-support = "0.1.1"
 # to these lines
 sfml = { git = "https://github.com/jeremyletang/rust-sfml.git" }
