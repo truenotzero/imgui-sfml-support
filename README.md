@@ -44,12 +44,14 @@ fn main() {
 ## Installation instructions
 ### IMPORTANT NOTE: This crate won't work out of the box!  
 Due to how crates.io handles versioning, you should use the workaround specified below to get this working.  
-To fix this, change in your `Cargo.toml` under `[dependencies]`:
+To fix this, change in your crate's `Cargo.toml` under `[dependencies]`:
 ```toml
-# change this line
+# change these lines
+sfml = "0.20.0"
 imgui-sfml-support = "0.1.1"
-# to this line
-imgui-sfml-support = { git = "https://github.com/truenotzero/imgui-sfml-support.git", branch="workaround" }
+# to these lines
+sfml = { git = "https://github.com/jeremyletang/rust-sfml.git" }
+imgui-sfml-support = { git = "https://github.com/truenotzero/imgui-sfml-support.git", branch = "workaround" }
 ```
 I have submitted a pull request in order to fix the issue, which has been accepted!  
 However, due to how dependencies and versioning are handled by cargo, until `rust-sfml` doesn't update to `0.22.0`, the workaround is needed.  
