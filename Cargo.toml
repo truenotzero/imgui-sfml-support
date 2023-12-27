@@ -12,5 +12,5 @@ license="MIT"
 [dependencies]
 imgui = "0.11.0"
 imgui-opengl-renderer = "0.12.1"
-sfml = "0.21.0"
+sfml = { git = "https://github.com/jeremyletang/rust-sfml.git" }
 
